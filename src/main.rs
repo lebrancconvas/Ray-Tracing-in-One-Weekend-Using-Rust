@@ -1,5 +1,6 @@
 use std::fs::File;
 use std::io::Write;
+use ray_tracing::cg_draw::draw;
 
 fn main() {
     let format = "P3".to_string();
@@ -16,12 +17,12 @@ fn main() {
             let r = h;
             let g = h;
             let b = w;
-            color_code += &format!("{} {} {}\n", r, g, b);
+            color_code += &draw(r as f64, g as f64, b as f64);
             println!("{} {} {}", r, g, b);
         }
     }
 
-    let mut data = File::create("app.ppm").expect("Created File Failed");
+    let mut data = File::create("image.ppm").expect("Created File Failed");
     data.write(color_code.as_bytes()).expect("Write File Failed");
     println!("Write Data Success!");
 }
