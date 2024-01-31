@@ -1,4 +1,4 @@
-use crate::cg_math::vector::Vector;
+use crate::mathematics::vector::Vector;
 
 pub trait VectorCalculation {
   fn add(&mut self, vec: Vector);

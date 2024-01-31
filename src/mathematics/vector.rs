@@ -1,4 +1,4 @@
-use crate::cg_math::vector_calc::VectorCalculation;
+use crate::mathematics::vector_calc::VectorCalculation;
 
 pub struct Vector {
   pub x: f64,

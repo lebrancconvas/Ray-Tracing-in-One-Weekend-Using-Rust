@@ -1,6 +1,6 @@
 use std::fs::File;
 use std::io::Write;
-use ray_tracing::{cg_draw::Drawing, cg_math::Vector};
+use ray_tracing::{drawing::Drawing, mathematics::Vector};
 
 fn main() {
     let format = "P3".to_string();

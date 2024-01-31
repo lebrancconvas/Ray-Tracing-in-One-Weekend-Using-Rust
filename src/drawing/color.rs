@@ -1,4 +1,4 @@
-use crate::{cg_math::vector::Vector, cg_draw::draw::Drawing};
+use crate::{mathematics::vector::Vector, drawing::draw::Drawing};
 
 impl Vector {
   pub fn color(r: f64, g: f64, b: f64) -> Vector {
