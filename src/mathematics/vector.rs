@@ -6,23 +6,35 @@ pub struct Vector {
   pub z: f64
 }
 
+impl Vector {
+  pub fn new(x: f64, y: f64, z: f64) -> Vector {
+    Vector { x, y, z }
+  }
+}
+
 impl VectorCalculation for Vector {
-  fn add(&mut self, vec: Vector) {
-    self.x += vec.x;
-    self.y += vec.y;
-    self.z += vec.z;
+  fn add(&self, vec: Vector) -> Vector {
+    Vector {
+      x: self.x + vec.x,
+      y: self.y + vec.y,
+      z: self.z + vec.z
+    }
   }
 
-  fn mulv(&mut self, vec: Vector) {
-    self.x *= vec.x;
-    self.y *= vec.y;
-    self.z *= vec.z;
+  fn mulv(&self, vec: Vector) -> Vector {
+    Vector {
+      x: self.x * vec.x,
+      y: self.y * vec.y,
+      z: self.z * vec.z
+    }
   }
 
-  fn mulc(&mut self, scale: f64) {
-    self.x *= scale;
-    self.y *= scale;
-    self.z *= scale;
+  fn mulc(&self, scale: f64) -> Vector {
+    Vector {
+      x: self.x * scale,
+      y: self.y * scale,
+      z: self.z * scale
+    }
   }
 
   fn dot(&self, vec: Vector) -> f64 {
